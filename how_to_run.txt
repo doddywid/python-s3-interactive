@@ -1,0 +1,10 @@
+docker run --rm -it -v $(pwd):/app python:3.11-alpine sh
+
+#inside container
+apk add --no-cache python3 py3-pip
+pip install boto3
+pip install requests requests-aws4auth
+
+#run the script
+cd /app
+python interactive_s3.py
